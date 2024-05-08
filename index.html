@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Veto Academy</title>
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/elzero.css" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="css/all.min.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- Start Header -->
+    <div class="header" id="header">
+      <div class="container">
+        <a href="#" class="logo">VEto Academy</a>
+        <ul class="main-nav">
+        </ul>
+
+      </div>
+    </div>
+    <!-- End Header -->
+    <div class="notification-container">
+      <div class="container">
+      <div class="notification">
+        <div class="notification-content">
+          <p>لو عندك أي استفسار او سؤال علمي تواصل معنا من خلال الشات بوت ‼️</p>
+          <a href="https://t.me/PhysicsSocietySupportBot" target="_blank" rel="noreferrer">https://t.me/</a>
+        </div>
+        <button class="close-button">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--fa" width="0.93em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 1216 1312">
+            <path fill="currentColor" d="M1202 1066q0 40-28 68l-136 136q-28 28-68 28t-68-28L608 976l-294 294q-28 28-68 28t-68-28L42 1134q-28-28-28-68t28-68l294-294L42 410q-28-28-28-68t28-68l136-136q28-28 68-28t68 28l294 294l294-294q28-28 68-28t68 28l136 136q28 28 28 68t-28 68L880 704l294 294q28 28 28 68"></path>
+          </svg>
+        </button>
+      </div>
+      </div>
+    </div>
+    <script>
+      document.addEventListener('contextmenu', function (event) {
+event.preventDefault();
+});
+const closeButtons = document.querySelectorAll('.close-button');
+
+closeButtons.forEach((button) => {
+button.addEventListener('click', () => {
+  button.closest('.notification').remove();
+});
+});
+
+    </script>
+    <!-- Start Landing -->
+  <div class="landindg">
+    <div class="landing">
+      <div class="container">
+        <div class="text">
+          <h1>Welcome In Veto Academy</h1>
+          <p></p>
+        </div>
+        <div class="image">
+        </div>
+      </div>
+      <a href="#articles" class="go-down">
+        <i class="fas fa-angle-double-down fa-2x"></i>
+      </a>
+    </div>
+  </div>
+    <!-- End Landing -->
+    <!-- Start Articles -->
+    <div class="articles" id="articles">
+      <h2 class="main-title">الكورسات</h2>
+      <div class="container">
+        <div class="box">
+          <img src="imgs/IMG_6532.jpg" alt="" />
+          <div class="content">
+            <h3>م/كيرو روماني</h3>
+            <p>مراجعه ليله الامتحان جغرافيه الصف الاول الثانوي</p>
+          </div>
+          <div class="info">
+            <a href="#" onclick="checkCodekero()">الاشتراك</a>
+            <i class="fas fa-long-arrow-alt-right"></i>
+          </div>
+        </div>
+        <div class="box">
+          <img src="imgs/IMG_8066.jpg" alt="">
+          <div class="content">
+            <h3>م/اسلام المحمدي</h3>
+            <p>مراجعة ليلة الامتحان تاريخ الصف الأول الثانوي</p>
+          </div>
+          <div class="info">
+            <a href="#" onclick="checkCode()">الاشتراك</a>
+            <i class="fas fa-long-arrow-alt-right"></i>
+          </div>
+        </div>
+        
+        <script>
+            function checkCode() {
+    var storedEmail = localStorage.getItem('email');
+    var storedPassword = localStorage.getItem('password');
+    var storedCodes = JSON.parse(localStorage.getItem('codes')) || [];
+
+    if (storedEmail && storedPassword && storedCodes.length > 0) {
+        var enteredPassword = prompt("الرجاء إدخال كلمة المرور:");
+        if (enteredPassword === storedPassword) {
+            alert("تم تسجيل الدخول بنجاح!");
+            window.open("islam.html", "_blank");
+            return;
+        }
+    }
+
+    var enteredCode = prompt("الرجاء إدخال رمز الاشتراك:");
+    if (enteredCode === null || !storedCodes.includes(enteredCode)) {
+        alert("رمز الاشتراك غير صحيح!");
+        return;
+    }
+
+    // Check if code has already been used
+    if (localStorage.getItem(enteredCode)) {
+        alert("تم استخدام الرمز من قبل!");
+        location.reload();
+        return;
+    }
+
+    var email = prompt("الرجاء إدخال البريد الإلكتروني:");
+    if (email === null) {
+        location.reload(); // تحديث الصفحة إذا تم الضغط على "إلغاء"
+        return;
+    }
+    var password = prompt("الرجاء إدخال كلمة المرور:");
+
+    // إزالة الرمز المستخدم من القائمة
+    var codeIndex = storedCodes.indexOf(enteredCode);
+    storedCodes.splice(codeIndex, 1);
+
+    // تحديث قيمة الـ localStorage
+    localStorage.setItem('email', email);
+    localStorage.setItem('password', password);
+    localStorage.setItem(enteredCode, true); // Mark code as used
+    localStorage.setItem('codes', JSON.stringify(storedCodes));
+
+    alert("تم تسجيل الدخول بنجاح!");
+    window.open("islam.html", "_blank");
+}
+
+// إضافة المزيد من الرموز إلى القائمة
+var additionalCodes = ["islam-4a5t-g6hh", "kero-af7f-kiw8", "islam-5d4g-aw8w", "kero-w4q6-d4v1", "islam-o7wk-a1f3", "islam-w7r9-fvn7", "kero-iy5r-rRf8", "kero-a13g-12a7", "islam-das4-va9g-a1b2", "kero-yqt5-ov4a", "islam-4w8q-v9oo", "kero-ha65-t6v8", "islam-1b3m-c1e2", "kero-A2va-qp4c", "islam-7et8-n9w5", "kero-hjl4-w9r7", "islam-a6r7-v1aw", "kero-d4a6-oi75", "islam-ki8w-ag4v", "kero-q7f5-6a9g", "islam6666660", "kero6666660"];
+var storedCodes = JSON.parse(localStorage.getItem('codes')) || [];
+storedCodes = storedCodes.concat(additionalCodes);
+localStorage.setItem('codes', JSON.stringify(storedCodes));
+
+function checkCodekero() {
+    var storedEmail = localStorage.getItem('email');
+    var storedPassword = localStorage.getItem('password');
+    var storedCodes = JSON.parse(localStorage.getItem('codes')) || [];
+
+    if (storedEmail && storedPassword && storedCodes.length > 0) {
+        var enteredPassword = prompt("الرجاء إدخال كلمة المرور:");
+        if (enteredPassword === storedPassword) {
+            alert("تم تسجيل الدخول بنجاح!");
+            window.open("kero.html", "_blank");
+            return;
+        }
+    }
+
+    var enteredCode = prompt("الرجاء إدخال رمز الاشتراك:");
+    if (enteredCode === null || !storedCodes.includes(enteredCode)) {
+        alert("رمز الاشتراك غير صحيح!");
+        return;
+    }
+
+    // Check if code has already been used
+    if (localStorage.getItem(enteredCode)) {
+        alert("تم استخدام الرمز من قبل!");
+        location.reload();
+        return;
+    }
+
+    var email = prompt("الرجاء إدخال البريد الإلكتروني:");
+    if (email === null) {
+        location.reload(); // تحديث الصفحة إذا تم الضغط على "إلغاء"
+        return;
+    }
+    var password = prompt("الرجاء إدخال كلمة المرور:");
+
+    // إزالة الرمز المستخدم من القائمة
+    var codeIndex = storedCodes.indexOf(enteredCode);
+    storedCodes.splice(codeIndex, 1);
+
+    // تحديث قيمة الـ localStorage
+    localStorage.setItem('email', email);
+    localStorage.setItem('password', password);
+    localStorage.setItem(enteredCode, true); // Mark code as used
+    localStorage.setItem('codes', JSON.stringify(storedCodes));
+
+    alert("تم تسجيل الدخول بنجاح!");
+    window.open("kero.html", "_blank");
+}
+
+// إضافة المزيد من الرموز إلى القائمة
+var storedCodes = JSON.parse(localStorage.getItem('codes')) || [];
+storedCodes = storedCodes.concat(additionalCodes);
+localStorage.setItem('codes', JSON.stringify(storedCodes));
+
+    </script>
+        </div>
+        </div>
+        </div>
+      </div>
+    </div>
+    <div class="spikes"></div>
+    <!-- End Articles -->
+    <!-- Start Gallery -->
+    <div class="gallery" id="gallery">
+      <h2 class="main-title">Veto Academy</h2>
+      <div class="container">
+        <div class="box">
+          <div class="image">
+            <img src="imgs/IMG_8065.jpg" alt="" />
+          </div>
+        </div>
+        <div class="box">
+          <div class="image">
+            <img src="imgs/photo_2024-04-12_00-54-51.JPG" alt="" />
+          </div>
+        </div>
+        <div class="box">
+          <div class="image">
+            <img src="imgs/photo_2024-04-12_00-54-59.jpg" alt="" />
+          </div>
+        </div>
+        <div class="box">
+          <div class="image">
+            <img src="imgs/IMG_5198.JPG" alt="" />
+          </div>
+        </div>
+        <div class="box">
+          <div class="image">
+            <img src="imgs/IMG_6532.JPG" alt="" />
+          </div>
+        </div>
+        <div class="box">
+          <div class="image">
+            <img src="imgs/IMG_8063.JPG" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Gallery -->
+    <!-- Start Team -->
+    <div class="team" id="team">
+      <h2 class="main-title">Conect Us</h2>
+      <div class="container">
+        <div class="box">
+          <div class="data">
+            <img src="imgs/IMG_8065.JPG" alt="" />
+            <div class="social">
+              <a href="#">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="#">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="#">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a href="#">
+                <i class="fab fa-youtube"></i>
+              </a>
+            </div>
+          </div>
+          <div class="info">
+            <h3>Conect</h3>
+            <p></p>
+          </div>
+        </div>
+        <div class="box">
+          <div class="data">
+            <img src="imgs/IMG_6532.JPG" alt="" />
+            <div class="social">
+              <a href="#">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="#">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="#">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a href="#">
+                <i class="fab fa-youtube"></i>
+              </a>
+            </div>
+          </div>
+          <div class="info">
+            <h3>Conect</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="spikes"></div>
+    <!-- End Team -->
+    <!-- Start Footer -->
+    <div class="footer">
+      <div class="container">
+        <div class="box">
+
+          <ul class="social">
+            
+          </ul>
+          
+        </div>
+        <div class="box">
+          
+        </div>
+        <div class="box">
+          
+        </div>
+        <div class="box footer-gallery">
+          <img src="imgs/veto.jpeg" alt="" />
+          <img src="imgs/photo_2024-04-27_13-19-05.jpg" alt="" />
+          <img src="imgs/photo_2024-04-27_13-18-47.jpg" alt="" />
+          <img src="imgs/gallery-04.png" alt="" />
+          <img src="imgs/gallery-05.jpg" alt="" />
+          <img src="imgs/gallery-06.png" alt="" />
+        </div>
+      </div>
+      <p class="copyright">Made With &lt;3 By Ahmed</p>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>VEto Academy</title>
+	<link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/elzero.css">
+    <link rel="stylesheet" href="css/normalize.css">
+</head>
+<body>
+    <div class="header" id="header">
+        <div class="container">
+          <a href="#" class="logo">VEto Academy</a>
+          <ul class="main-nav">
+          </ul>
+        </div>
+      </div>
+      <!-- End Header -->
+    <div class="notification-container">
+        <div class="container">
+        <div class="notification">
+          <div class="notification-content">
+            <p>لو عندك أي استفسار او سؤال علمي تواصل معنا من خلال الشات بوت ‼️</p>
+            <a href="https://t.me/PhysicsSocietySupportBot" target="_blank" rel="noreferrer">https://t.me/</a>
+          </div>
+          <button class="close-button">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--fa" width="0.93em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 1216 1312">
+              <path fill="currentColor" d="M1202 1066q0 40-28 68l-136 136q-28 28-68 28t-68-28L608 976l-294 294q-28 28-68 28t-68-28L42 1134q-28-28-28-68t28-68l294-294L42 410q-28-28-28-68t28-68l136-136q28-28 68-28t68 28l294 294l294-294q28-28 68-28t68 28l136 136q28 28 28 68t-28 68L880 704l294 294q28 28 28 68"></path>
+            </svg>
+          </button>
+        </div>
+        </div>
+      </div>
+      <script>
+        document.addEventListener('contextmenu', function (event) {
+  event.preventDefault();
+});
+const closeButtons = document.querySelectorAll('.close-button');
+
+closeButtons.forEach((button) => {
+  button.addEventListener('click', () => {
+    button.closest('.notification').remove();
+  });
+});
+window.addEventListener('keyup',(e)=>{
+    navigator.clipboard.writeText('');
+    alert('Screenshot Disabled');
+  }
+);
+      </script>
+      <!-- Start Landing -->
+      <div class="landing">
+        <div class="container">
+          <div class="text">
+            <h1>Welcome In Veto Academy</h1>
+            <p class="hero-text">
+                <br>مع الدحيح في الجغرافيا
+                <br>الاستاذ / <span class="name">كيرلس روماني</span>
+              </p>
+          </div>
+          <div class="image">
+            <img src="imgs/IMG_6532.JPG">
+          </div>
+        </div>
+        <a href="#articles" class="go-down">
+          <i class="fas fa-angle-double-down fa-2x"></i>
+        </a>
+      </div>
+      <!-- Start Articles -->
+      <div class="articles" id="articles">
+        <h2 class="main-title">Articles</h2>
+        <div class="container">
+          <div class="box">
+            <img src="imgs/photo_1.jpg" alt="">
+            <div class="content">
+              <h3>النمو والتركيب السكانى</h3>
+              <p>مراجعه ليله الامتحان جغرافيه الصف الاول الثانوي</p>
+            </div>
+            <div class="info">
+              <a href="#" onclick="checkCode1()">فتح</a>
+              <i class="fas fa-long-arrow-alt-right"></i>
+            </div>
+          </div>
+          <div class="box">
+            <img src="imgs/photo_2.jpg" alt="">
+            <div class="content">
+              <h3>توزيع وكثافة السكان</h3>
+              <p>مراجعه ليله الامتحان جغرافيه الصف الاول الثانوي</p>
+            </div>
+            <div class="info">
+              <a href="#" onclick="checkCode2()">فتح</a>
+              <i class="fas fa-long-arrow-alt-right"></i>
+            </div>
+          </div>
+          <div class="box">
+            <img src="imgs/photo_3.jpg" alt="">
+            <div class="content">
+              <h3>المشكلات السكانية والاجتماعية</h3>
+              <p>مراجعه ليله الامتحان جغرافيه الصف الاول الثانوي</p>
+            </div>
+            <div class="info">
+              <a href="#" onclick="checkCode3()">فتح</a>
+              <i class="fas fa-long-arrow-alt-right"></i>
+            </div>
+          </div>
+          <div class="box">
+            <img src="imgs/photo_4.jpg" alt="">
+            <div class="content">
+              <h3>النشاط الزراعى فى مصر</h3>
+              <p>مراجعه ليله الامتحان جغرافيه الصف الاول الثانوي</p>
+            </div>
+            <div class="info">
+              <a href="#" onclick="checkCode4()">فتح</a>
+              <i class="fas fa-long-arrow-alt-right"></i>
+            </div>
+          </div>
+          <div class="box">
+            <img src="imgs/photo_2024-5.jpg" alt="">
+            <div class="content">
+              <h3>النشاط التعدينى والصناعى فى مصر</h3>
+              <p>مراجعه ليله الامتحان جغرافيه الصف الاول الثانوي</p>
+            </div>
+            <div class="info">
+              <a href="#" onclick="checkCode5()">فتح</a>
+              <i class="fas fa-long-arrow-alt-right"></i>
+            </div>
+          </div>
+          <div class="box">
+            <img src="imgs/photo_6.jpg" alt="">
+            <div class="content">
+              <h3>النقل والتجارة فى مصر</h3>
+              <p>مراجعه ليله الامتحان جغرافيه الصف الاول الثانوي</p>
+            </div>
+            <div class="info">
+              <a href="#" onclick="checkCode6()">فتح</a>
+              <i class="fas fa-long-arrow-alt-right"></i>
+            </div>
+          </div>
+          <div class="box">
+            <img src="imgs/photo_7.jpg" alt="">
+            <div class="content">
+              <h3>السياحة فى مصر</h3>
+              <p>مراجعه ليله الامتحان جغرافيه الصف الاول الثانوي</p>
+            </div>
+            <div class="info">
+              <a href="#" onclick="checkCode7()">فتح</a>
+              <i class="fas fa-long-arrow-alt-right"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+<!-- Start Gallery -->
+<div class="gallery" id="gallery">
+  <h2 class="main-title">Veto Academy</h2>
+  <div class="container">
+    <div class="box">
+      <div class="image">
+        <img src="imgs/IMG_5198.JPG" alt="" />
+      </div>
+    </div>
+    <div class="box">
+      <div class="image">
+        <img src="imgs/IMG_6532.JPG" alt="" />
+      </div>
+    </div>
+    <div class="box">
+      <div class="image">
+        <img src="imgs/IMG_8063.JPG" alt="" />
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End Gallery -->
+<!-- Start Footer -->
+<div class="footer">
+  <div class="container">
+  <p class="copyright">Made With &lt;3 By Ahmed</p>
+</div>
+</div>
+	<script>
+      function checkCode1() {
+        window.open("video/kero1.html");
+        return;
+    }
+    function checkCode2() {
+        window.open("video/kero2.html");
+        return;
+    }
+    function checkCode3() {
+        window.open("video/kero3.html");
+        return;
+    }
+    function checkCode4() {
+        window.open("video/kero4.html");
+        return;
+    }
+    function checkCode5() {
+        window.open("video/kero5.html");
+        return;
+    }
+    function checkCode6() {
+        window.open("video/kero6.html");
+        return;
+    }
+    function checkCode7() {
+        window.open("video/kero7.html");
+        return;
+    }
+    </script>
+</body>
+</html>
